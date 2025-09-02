@@ -35,7 +35,10 @@ import {
   Send,
   Mic,
   Camera,
-  FileText as Document
+  FileText as Document,
+  Crown,
+  User,
+  Building
 } from 'lucide-react'
 
 const navigation = [
@@ -46,50 +49,75 @@ const navigation = [
   { name: 'Pricing', href: '#pricing' },
 ]
 
+// Leadership Team Data
+
+
 const aiServices = [
   {
-    icon: Brain,
-    title: 'Generative AI & LLMs',
-    description: 'ChatGPT-style AI assistants, content generation, and large language models tailored for Indian businesses.',
-    features: ['Custom ChatGPT Clones', 'Hindi-English AI', 'Document Generation', 'Code Generation'],
+    icon: FileText,
+    title: 'AI Paper Correction',
+    description: 'Advanced AI-powered paper correction system for educational institutions, research papers, and academic content.',
+    features: ['Grammar & Style Check', 'Plagiarism Detection', 'Citation Validation', 'Academic Writing Enhancement'],
     trending: true,
-    useCases: ['Customer Support Bots', 'Content Creation', 'Legal Document Review', 'Educational Tutors']
+    useCases: ['University Papers', 'Research Publications', 'Student Assignments', 'Academic Journals']
   },
   {
     icon: Eye,
-    title: 'Computer Vision',
-    description: 'Advanced visual AI for quality control, security, and automation in Indian manufacturing and retail.',
-    features: ['Quality Inspection', 'Facial Recognition', 'OCR for Regional Languages', 'Defect Detection'],
-    useCases: ['Manufacturing QC', 'Retail Analytics', 'Security Systems', 'Vehicle Recognition']
+    title: 'AI Classroom Monitoring',
+    description: 'Intelligent classroom monitoring system using computer vision to track student engagement and behavior.',
+    features: ['Student Attention Tracking', 'Behavioral Analysis', 'Attendance Automation', 'Performance Insights'],
+    trending: true,
+    useCases: ['Online Education', 'Physical Classrooms', 'Student Assessment', 'Teacher Training']
   },
   {
     icon: MessageSquare,
-    title: 'Multimodal AI',
-    description: 'Next-gen AI that understands text, images, audio, and video together for comprehensive analysis.',
-    features: ['Voice + Vision AI', 'Document Analysis', 'Video Understanding', 'Audio Processing'],
-    trending: true,
-    useCases: ['KYC Verification', 'Media Analysis', 'Voice Commerce', 'Educational Content']
+    title: 'AI Movie Review System',
+    description: 'Automated movie review and sentiment analysis system for entertainment platforms and content creators.',
+    features: ['Sentiment Analysis', 'Review Summarization', 'Rating Prediction', 'Content Recommendation'],
+    useCases: ['Streaming Platforms', 'Movie Studios', 'Content Marketing', 'Audience Insights']
   },
   {
-    icon: TrendingUp,
-    title: 'Predictive Analytics',
-    description: 'AI-powered forecasting for Indian markets, monsoon patterns, and business predictions.',
-    features: ['Market Forecasting', 'Demand Planning', 'Risk Assessment', 'Price Optimization'],
-    useCases: ['Crop Yield Prediction', 'Stock Market Analysis', 'Inventory Management', 'Insurance Claims']
+    icon: Brain,
+    title: 'NUTRI AI',
+    description: 'Intelligent nutrition analysis and dietary recommendation system for health and wellness applications.',
+    features: ['Food Recognition', 'Nutritional Analysis', 'Diet Planning', 'Health Monitoring'],
+    useCases: ['Healthcare Apps', 'Fitness Centers', 'Restaurant Chains', 'Personal Wellness']
+  },
+  {
+    icon: Workflow,
+    title: 'AI Supply Chain Management',
+    description: 'End-to-end AI-powered supply chain optimization from farmers to flavors, covering agriculture to retail.',
+    features: ['Demand Forecasting', 'Inventory Optimization', 'Route Planning', 'Quality Control'],
+    useCases: ['Agricultural Supply Chain', 'Food Processing', 'Retail Distribution', 'Logistics Optimization']
   },
   {
     icon: Database,
-    title: 'Knowledge Mining',
-    description: 'Extract insights from unstructured data, documents, and regional language content.',
-    features: ['Document AI', 'Regional Language NLP', 'Knowledge Graphs', 'Smart Search'],
-    useCases: ['Legal Research', 'Medical Records', 'Compliance Monitoring', 'Academic Research']
+    title: 'AI Database Agents',
+    description: 'Intelligent database management and optimization agents for enterprise data operations.',
+    features: ['Query Optimization', 'Performance Monitoring', 'Data Quality Checks', 'Automated Maintenance'],
+    useCases: ['Enterprise Databases', 'Data Warehouses', 'Cloud Storage', 'Big Data Platforms']
   },
   {
     icon: Cpu,
-    title: 'Intelligent Automation',
-    description: 'End-to-end process automation with AI decision-making for Indian enterprises.',
-    features: ['RPA + AI', 'Smart Workflows', 'Exception Handling', 'Approval Automation'],
-    useCases: ['Invoice Processing', 'Loan Approvals', 'HR Onboarding', 'Compliance Checks']
+    title: 'AI Custom LLM Model Building',
+    description: 'Custom large language model development and fine-tuning for specific industry requirements.',
+    features: ['Model Training', 'Fine-tuning', 'Domain Adaptation', 'Performance Optimization'],
+    trending: true,
+    useCases: ['Industry-Specific AI', 'Enterprise Chatbots', 'Content Generation', 'Knowledge Management']
+  },
+  {
+    icon: FileText,
+    title: 'AI Paperless Documentation for Hospitals',
+    description: 'Intelligent document management and automation system for healthcare institutions.',
+    features: ['Medical Record Processing', 'Document Classification', 'Data Extraction', 'Compliance Automation'],
+    useCases: ['Hospital Management', 'Medical Records', 'Insurance Claims', 'Regulatory Compliance']
+  },
+  {
+    icon: MessageSquare,
+    title: 'AI Call Centers',
+    description: 'Intelligent call center automation with natural language processing and sentiment analysis.',
+    features: ['Voice Recognition', 'Sentiment Analysis', 'Call Routing', 'Performance Analytics'],
+    useCases: ['Customer Service', 'Sales Support', 'Technical Support', 'Quality Monitoring']
   }
 ]
 
@@ -215,7 +243,7 @@ const testimonials = [
     name: 'Priya Sharma',
     role: 'CTO, TechCorp India',
     company: 'Mumbai',
-    content: 'AIaaS helped us deploy ChatGPT-style AI for customer support in Hindi and English. Our CSAT scores jumped from 3.2 to 4.8 stars, and we reduced support costs by ₹1.2 crores annually.',
+    content: 'Ecopyxle helped us deploy ChatGPT-style AI for customer support in Hindi and English. Our CSAT scores jumped from 3.2 to 4.8 stars, and we reduced support costs by ₹1.2 crores annually.',
     rating: 5,
     avatar: '👩‍💼',
     metric: '₹1.2 Cr saved annually',
@@ -225,7 +253,7 @@ const testimonials = [
     name: 'Rajesh Kumar',
     role: 'Head of Innovation, FinServ Ltd',
     company: 'Bangalore',
-    content: 'Their multimodal AI for KYC verification processes both documents and facial recognition simultaneously. We reduced onboarding time from 2 days to 15 minutes while maintaining 99.7% accuracy.',
+    content: 'Ecopyxle\'s multimodal AI for KYC verification processes both documents and facial recognition simultaneously. We reduced onboarding time from 2 days to 15 minutes while maintaining 99.7% accuracy.',
     rating: 5,
     avatar: '👨‍💻',
     metric: '15 min onboarding',
@@ -235,7 +263,7 @@ const testimonials = [
     name: 'Ananya Gupta',
     role: 'VP Operations, RetailMax',
     company: 'Delhi',
-    content: 'The AI-powered demand forecasting considers monsoon patterns, festivals, and local events. Our inventory accuracy improved to 96%, and we reduced stockouts during Diwali by 85%.',
+    content: 'Ecopyxle\'s AI-powered demand forecasting considers monsoon patterns, festivals, and local events. Our inventory accuracy improved to 96%, and we reduced stockouts during Diwali by 85%.',
     rating: 5,
     avatar: '👩‍🚀',
     metric: '96% inventory accuracy',
@@ -245,7 +273,7 @@ const testimonials = [
     name: 'Suresh Patel',
     role: 'Chief Digital Officer, AgriTech Solutions',
     company: 'Pune',
-    content: 'Their crop monitoring AI using satellite imagery and IoT sensors helped our farmers increase yields by 35%. The regional language support in Marathi made adoption seamless.',
+    content: 'Ecopyxle\'s crop monitoring AI using satellite imagery and IoT sensors helped our farmers increase yields by 35%. The regional language support in Marathi made adoption seamless.',
     rating: 5,
     avatar: '👨‍🌾',
     metric: '35% yield increase',
@@ -255,7 +283,7 @@ const testimonials = [
     name: 'Kavya Nair',
     role: 'Head of Product, EdTech Unicorn',
     company: 'Hyderabad',
-    content: 'AIaaS built personalized learning paths for our 2M+ students. The AI tutors work in 8 Indian languages, improving learning outcomes by 60% and reducing dropout rates.',
+    content: 'Ecopyxle built personalized learning paths for our 2M+ students. The AI tutors work in 8 Indian languages, improving learning outcomes by 60% and reducing dropout rates.',
     rating: 5,
     avatar: '👩‍🎓',
     metric: '60% better outcomes',
@@ -265,7 +293,7 @@ const testimonials = [
     name: 'Amit Agarwal',
     role: 'CTO, HealthTech Startup',
     company: 'Chennai',
-    content: 'Their medical imaging AI detected early-stage diabetic retinopathy with 94% accuracy. We\'ve screened over 50,000 patients and prevented vision loss in 3,000+ cases.',
+    content: 'Ecopyxle\'s medical imaging AI detected early-stage diabetic retinopathy with 94% accuracy. We\'ve screened over 50,000 patients and prevented vision loss in 3,000+ cases.',
     rating: 5,
     avatar: '👨‍⚕️',
     metric: '3,000+ cases prevented',
@@ -275,22 +303,22 @@ const testimonials = [
 
 const demoFeatures = [
   {
-    title: 'Text Analysis Demo',
-    description: 'Try our sentiment analysis on your text',
-    icon: MessageSquare,
-    demoType: 'text'
+    title: 'AI Paper Correction',
+    description: 'Try our academic writing assistance and grammar checking',
+    icon: FileText,
+    demoType: 'paper'
   },
   {
-    title: 'Image Recognition',
-    description: 'Upload an image and see AI classification',
+    title: 'Classroom Monitoring',
+    description: 'Experience our student engagement tracking system',
     icon: Eye,
-    demoType: 'image'
+    demoType: 'classroom'
   },
   {
-    title: 'Prediction Engine',
-    description: 'Enter data points for ML predictions',
-    icon: TrendingUp,
-    demoType: 'prediction'
+    title: 'NUTRI AI Demo',
+    description: 'Test our nutrition analysis and food recognition',
+    icon: Brain,
+    demoType: 'nutrition'
   }
 ]
 
@@ -335,45 +363,45 @@ const integrations = [
 
 const hotTrends = [
   {
-    icon: '🤖',
-    title: 'ChatGPT for Business',
-    description: 'Custom AI assistants trained on your data, supporting Hindi and regional languages',
-    tag: 'Most Requested',
+    icon: '📚',
+    title: 'AI Paper Correction',
+    description: 'Revolutionary AI-powered academic writing assistance and plagiarism detection',
+    tag: 'Education First',
     gradient: 'from-green-400 to-blue-500'
   },
   {
     icon: '👁️',
-    title: 'Multimodal AI',
-    description: 'AI that understands text, images, audio, and video simultaneously',
-    tag: 'Next-Gen',
+    title: 'Classroom Monitoring',
+    description: 'Intelligent student engagement tracking and behavioral analysis',
+    tag: 'EdTech Innovation',
     gradient: 'from-purple-400 to-pink-500'
   },
   {
-    icon: '🧠',
-    title: 'Fine-tuned LLMs',
-    description: 'Industry-specific large language models customized for Indian businesses',
-    tag: 'Enterprise Ready',
+    icon: '🎬',
+    title: 'AI Movie Reviews',
+    description: 'Automated sentiment analysis and content recommendation for entertainment',
+    tag: 'Media AI',
     gradient: 'from-orange-400 to-red-500'
   },
   {
-    icon: '⚡',
-    title: 'Real-time AI APIs',
-    description: 'Sub-50ms response times for live applications and user interactions',
-    tag: 'Ultra Fast',
+    icon: '🥗',
+    title: 'NUTRI AI',
+    description: 'Intelligent nutrition analysis and personalized dietary recommendations',
+    tag: 'Health Tech',
     gradient: 'from-yellow-400 to-orange-500'
   },
   {
-    icon: '🌐',
-    title: 'Regional Language AI',
-    description: 'AI models supporting 22+ Indian languages including voice and text',
-    tag: 'India First',
+    icon: '🚚',
+    title: 'Supply Chain AI',
+    description: 'End-to-end optimization from farmers to flavors with predictive analytics',
+    tag: 'Logistics Innovation',
     gradient: 'from-teal-400 to-cyan-500'
   },
   {
-    icon: '🔐',
-    title: 'Private AI Cloud',
-    description: 'Secure, on-premises AI deployment for sensitive data and compliance',
-    tag: 'Enterprise Security',
+    icon: '🤖',
+    title: 'Custom LLM Models',
+    description: 'Industry-specific language models tailored for specialized use cases',
+    tag: 'Enterprise Ready',
     gradient: 'from-indigo-400 to-purple-500'
   }
 ]
@@ -404,7 +432,7 @@ export default function HomePage() {
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
                 <Brain className="h-8 w-8 text-primary-600" />
-                <span className="ml-2 text-xl font-bold text-gray-900">AIaaS</span>
+                <span className="ml-2 text-xl font-bold text-gray-900">Ecopyxle</span>
               </div>
             </div>
             
@@ -481,8 +509,8 @@ export default function HomePage() {
               className="mb-4"
             >
               <div className="inline-flex items-center bg-gradient-to-r from-green-100 to-blue-100 border border-green-200 px-4 py-2 rounded-full text-sm font-medium text-green-800 mb-4">
-                <span className="animate-pulse mr-2">🔥</span>
-                Now with ChatGPT-style AI for Indian businesses
+                <span className="animate-pulse mr-2">🚀</span>
+                You Dream It, We AI It
               </div>
             </motion.div>
 
@@ -492,7 +520,7 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
             >
-              India's Most Advanced
+              Transform Your Business with
               <span className="block bg-gradient-to-r from-primary-600 via-purple-600 to-accent-600 bg-clip-text text-transparent">
                 AI as a Service Platform
               </span>
@@ -504,8 +532,8 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto"
             >
-              Deploy <strong>ChatGPT-style AI</strong>, <strong>Multimodal AI</strong>, and <strong>Custom LLMs</strong> in Hindi and 25+ languages. 
-              Join 500+ Indian enterprises saving ₹2+ crores annually with our enterprise-grade AI platform.
+              Deploy <strong>AI Paper Correction</strong>, <strong>Classroom Monitoring</strong>, <strong>NUTRI AI</strong>, and <strong>Custom LLM Models</strong> 
+              across education, healthcare, entertainment, and supply chain. Join 500+ Indian enterprises saving ₹2+ crores annually with Ecopyxle's specialized AI solutions.
             </motion.p>
             
             <motion.div 
@@ -556,10 +584,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Comprehensive AI Services
+              Specialized AI Solutions
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our platform covers the entire spectrum of AI capabilities, ensuring you have the right tools for any challenge.
+              Industry-specific AI solutions designed to solve real-world challenges across education, healthcare, entertainment, and more.
             </p>
           </div>
 
@@ -624,6 +652,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+
 
       {/* Industries Section */}
       <section id="industries" className="py-20 bg-gray-50">
@@ -954,7 +984,7 @@ export default function HomePage() {
               Trusted by Leading Indian Companies
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how businesses across India are transforming with our AI solutions
+              See how businesses across India are transforming with Ecopyxle's AI solutions
             </p>
           </div>
 
@@ -1087,11 +1117,11 @@ export default function HomePage() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 depth-layer">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Lead India's AI Revolution?
+            Ready to Transform Your Industry with Specialized AI?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Join 500+ Indian enterprises already using our AI platform to drive digital transformation. 
-            Start your AI journey today with ₹0 setup cost.
+            Join 500+ Indian enterprises already using Ecopyxle's specialized AI solutions for education, healthcare, 
+            entertainment, and supply chain. Start your AI journey today with ₹0 setup cost.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
             <div className="text-center">
@@ -1126,11 +1156,11 @@ export default function HomePage() {
             <div className="lg:col-span-2">
               <div className="flex items-center mb-4">
                 <Brain className="h-8 w-8 text-primary-400" />
-                <span className="ml-2 text-xl font-bold">AIaaS India</span>
+                <span className="ml-2 text-xl font-bold">Ecopyxle</span>
               </div>
               <p className="text-gray-400 mb-6">
                 India's leading AI as a Service platform. Empowering businesses across the subcontinent 
-                with cutting-edge artificial intelligence solutions.
+                with cutting-edge artificial intelligence solutions. You Dream It, We AI It.
               </p>
               <div className="space-y-2 text-gray-400">
                 <div className="flex items-center">
@@ -1151,12 +1181,12 @@ export default function HomePage() {
             <div>
               <h4 className="text-lg font-semibold mb-4">AI Services</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Machine Learning</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Computer Vision</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">NLP & Chatbots</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Predictive Analytics</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Data Intelligence</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">AI Automation</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">AI Paper Correction</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Classroom Monitoring</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">NUTRI AI</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Supply Chain AI</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Custom LLM Models</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">AI Call Centers</a></li>
               </ul>
             </div>
             
@@ -1188,7 +1218,7 @@ export default function HomePage() {
           <div className="border-t border-gray-800 mt-12 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="text-gray-400 mb-4 md:mb-0">
-                <p>&copy; 2024 AIaaS India Pvt. Ltd. All rights reserved.</p>
+                <p>&copy; 2024 Ecopyxle Pvt. Ltd. All rights reserved.</p>
               </div>
               <div className="flex space-x-6 text-gray-400">
                 <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
@@ -1200,6 +1230,7 @@ export default function HomePage() {
             <div className="mt-4 pt-4 border-t border-gray-800 text-center text-sm text-gray-500">
               <p>Registered Office: 123 Innovation Hub, Bandra Kurla Complex, Mumbai 400051, Maharashtra, India</p>
               <p className="mt-1">CIN: U72900MH2024PTC123456 | GST: 27ABCDE1234F1Z5</p>
+              <p className="mt-1">Tagline: You Dream It, We AI It</p>
             </div>
           </div>
         </div>
@@ -1236,7 +1267,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className="font-semibold">AI Assistant</h3>
-                  <p className="text-xs opacity-90">Online • Powered by AIaaS</p>
+                  <p className="text-xs opacity-90">Online • Powered by Ecopyxle</p>
                 </div>
               </div>
               <button
