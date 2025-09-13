@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { 
   Users, 
@@ -39,11 +38,7 @@ export default function CompanyPage() {
       <section className="pt-8 pb-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
+            <div>
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 border border-green-200 shadow-md mb-6">
                 <span className="text-lg mr-2">🚀</span>
                 <span className="text-sm md:text-base font-bold text-gray-800">You Dream It, We AI It</span>
@@ -55,7 +50,7 @@ export default function CompanyPage() {
                 We're on a mission to democratize AI technology, making advanced artificial intelligence 
                 accessible and affordable for businesses of all sizes across India and beyond.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -64,7 +59,7 @@ export default function CompanyPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
+            <div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -82,9 +77,9 @@ export default function CompanyPage() {
                 We believe that every business, regardless of size, should have access to world-class AI solutions 
                 that can transform their operations and drive sustainable success.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
+            <div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -102,7 +97,7 @@ export default function CompanyPage() {
                 We envision a future where AI seamlessly integrates into every aspect of business operations, 
                 creating a more efficient, sustainable, and prosperous world.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -111,7 +106,7 @@ export default function CompanyPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -121,7 +116,7 @@ export default function CompanyPage() {
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Meet the visionary leaders who founded Ecopyxle and are driving our mission to democratize AI technology.
               </p>
-            </motion.div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -147,7 +142,7 @@ export default function CompanyPage() {
                 role: "Technical Architecture & Development"
               }
             ].map((founder, index) => (
-              <motion.div
+              <div
                 key={founder.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -163,7 +158,7 @@ export default function CompanyPage() {
                   <p className="text-sm text-blue-600 font-semibold mb-3">{founder.designation}</p>
                   <p className="text-gray-600 text-sm leading-relaxed">{founder.role}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -173,7 +168,7 @@ export default function CompanyPage() {
       <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -183,7 +178,7 @@ export default function CompanyPage() {
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 These principles guide everything we do and shape our culture, decisions, and relationships.
               </p>
-            </motion.div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -219,7 +214,7 @@ export default function CompanyPage() {
                 description: "We measure our success by the positive impact we create for our clients and society."
               }
             ].map((value, index) => (
-              <motion.div
+              <div
                 key={value.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -232,7 +227,7 @@ export default function CompanyPage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{value.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -242,7 +237,7 @@ export default function CompanyPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
+            <div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -273,9 +268,9 @@ export default function CompanyPage() {
                   <span className="text-gray-700">Industry veterans from top tech companies</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
+            <div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -312,7 +307,7 @@ export default function CompanyPage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -332,7 +327,7 @@ export default function CompanyPage() {
               { number: "50+", label: "AI Experts", icon: Users },
               { number: "15+", label: "Years Experience", icon: Award }
             ].map((stat, index) => (
-              <motion.div
+              <div
                 key={stat.label}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -345,7 +340,7 @@ export default function CompanyPage() {
                   <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
                   <div className="text-blue-100">{stat.label}</div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -354,7 +349,7 @@ export default function CompanyPage() {
       {/* CTA */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -375,7 +370,7 @@ export default function CompanyPage() {
                 <Users className="h-4 w-4" />
               </button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
