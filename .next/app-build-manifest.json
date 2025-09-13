@@ -1,27 +1,55 @@
 {
   "pages": {
-    "/_not-found": [
-      "static/chunks/webpack-0b3ae47e59f1433c.js",
-      "static/chunks/fd9d1056-f98f20ad25e9dd80.js",
-      "static/chunks/472-39896187496041ba.js",
-      "static/chunks/main-app-0bdedc0578f11195.js",
-      "static/chunks/app/_not-found-6415827aaeabfd70.js"
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
-      "static/chunks/webpack-0b3ae47e59f1433c.js",
-      "static/chunks/fd9d1056-f98f20ad25e9dd80.js",
-      "static/chunks/472-39896187496041ba.js",
-      "static/chunks/main-app-0bdedc0578f11195.js",
-      "static/css/dbd78d269970292d.css",
-      "static/chunks/app/layout-bc085c278bb2b856.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
-    "/page": [
-      "static/chunks/webpack-0b3ae47e59f1433c.js",
-      "static/chunks/fd9d1056-f98f20ad25e9dd80.js",
-      "static/chunks/472-39896187496041ba.js",
-      "static/chunks/main-app-0bdedc0578f11195.js",
-      "static/chunks/482-38bba96e42822824.js",
-      "static/chunks/app/page-0c61784d1a0dcbf8.js"
+    "/company/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/company/page.js"
+    ],
+    "/resources/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/resources/page.js"
+    ],
+    "/case-studies/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/case-studies/page.js"
+    ],
+    "/careers/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/careers/page.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/contact/page.js"
+    ],
+    "/portal/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/portal/page.js"
+    ],
+    "/customer-details/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/customer-details/page.js"
+    ],
+    "/demo/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/demo/page.js"
     ]
   }
 }

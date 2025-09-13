@@ -127,19 +127,54 @@ Reusable utility classes are defined in `globals.css`:
 - `.feature-card` - Service card styling
 - `.glass-effect` - Glassmorphism effect
 
-## Deployment
+## 🚀 Deployment
 
-This project can be deployed to:
-- **Vercel** (recommended for Next.js)
-- **Netlify**
-- **AWS Amplify**
-- **Any hosting platform supporting Node.js**
+### Static Hosting (Recommended)
 
-For Vercel deployment:
+The project is configured for static export and can be deployed to any static hosting service:
+
+1. **Build and Export**:
 ```bash
-npm install -g vercel
-vercel
+npm run build
+npm run export
 ```
+
+2. **Deploy the `out` directory** to your hosting service:
+   - Vercel
+   - Netlify
+   - GitHub Pages
+   - AWS S3 + CloudFront
+   - Any static hosting provider
+
+### Platform-Specific Deployment
+
+#### Vercel
+```bash
+npx vercel --prod
+```
+
+#### Netlify
+```bash
+npx netlify deploy --prod --dir=out
+```
+
+#### GitHub Pages
+1. Enable GitHub Pages in repository settings
+2. Set source to "GitHub Actions"
+3. The workflow will automatically deploy on push to main
+
+### Quick Deployment Script
+
+Run the included deployment script:
+```bash
+./deploy.sh
+```
+
+### Configuration Files
+
+- `vercel.json` - Vercel deployment configuration
+- `netlify.toml` - Netlify deployment configuration
+- `.nvmrc` - Node.js version specification
 
 ## Contributing
 
