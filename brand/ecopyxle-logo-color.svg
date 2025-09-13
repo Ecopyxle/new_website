@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="320" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ecopyxle">
+  <defs>
+    <linearGradient id="ecoFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="royalFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="pixelBlock" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+  <!-- eco word with leaf notch + seed inside o -->
+  <text x="290" y="220" text-anchor="middle" font-family="Inter, ui-sans-serif" font-weight="900" font-size="190" letter-spacing="-10" fill="url(#ecoFill)">eco</text>
+  <path d="M170 140 q34 -30 74 0 q-30 34 -74 34 q18 -16 0 -34 Z" fill="#22c55e" opacity="0.95"/>
+  <circle cx="330" cy="170" r="12" fill="#34d399"/>
+  <path d="M90 252 C 180 220, 260 246, 340 236" stroke="#99f6e4" stroke-width="12" opacity="0.35" fill="none"/>
+  <!-- py _ pixel-X _ le -->
+  <text x="640" y="220" text-anchor="middle" font-family="Inter, ui-sans-serif" font-weight="900" font-size="190" letter-spacing="-10" fill="url(#royalFill)">py</text>
+  <g transform="translate(720,168)">
+    <rect x="-28" y="-28" width="34" height="34" rx="5" fill="url(#pixelBlock)"/>
+    <rect x="6" y="-28" width="34" height="34" rx="5" fill="url(#pixelBlock)"/>
+    <rect x="-28" y="6" width="34" height="34" rx="5" fill="url(#pixelBlock)"/>
+    <rect x="6" y="6" width="34" height="34" rx="5" fill="url(#pixelBlock)"/>
+  </g>
+  <text x="975" y="220" text-anchor="middle" font-family="Inter, ui-sans-serif" font-weight="900" font-size="190" letter-spacing="-10" fill="url(#royalFill)">le</text>
+</svg>

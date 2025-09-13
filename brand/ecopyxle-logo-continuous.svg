@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="220" viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ECOPYXLE">
+  <defs>
+    <linearGradient id="ecoInk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="35%" stop-color="#06b6d4"/>
+      <stop offset="70%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <text x="600" y="160" text-anchor="middle" font-family="Inter, ui-sans-serif" font-weight="900" font-size="150" letter-spacing="-6" fill="url(#ecoInk)">ECOPYXLE</text>
+  <text x="600" y="160" text-anchor="middle" font-family="Inter, ui-sans-serif" font-weight="900" font-size="150" letter-spacing="-6" fill="none" stroke="url(#edge)" stroke-width="2" stroke-opacity="0.25">ECOPYXLE</text>
+</svg>
