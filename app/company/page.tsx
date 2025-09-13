@@ -92,6 +92,68 @@ export default function CompanyPage() {
         </div>
       </section>
 
+      {/* Founding Team */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Founding Team</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Meet the visionary leaders who founded Ecopyxle and are driving our mission to democratize AI technology.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                name: "Rambabu Pallam",
+                designation: "Founder, Board of Directors & Chief Executive Officer (CEO)",
+                role: "Strategic Leadership & Vision"
+              },
+              {
+                name: "Chandramouli Pothugunta",
+                designation: "Co-Founder, Board of Directors & Chief Marketing Officer (CMO)",
+                role: "Marketing & Business Development"
+              },
+              {
+                name: "Maruthi Yarapathineni",
+                designation: "Co-Founder, Board of Director & Chief Technology Officer (CTO)",
+                role: "Technology & Innovation"
+              },
+              {
+                name: "Vamsi Priya Padala",
+                designation: "Co-Founder, Board of Directors & Chief Technical Head (CTH)",
+                role: "Technical Architecture & Development"
+              }
+            ].map((founder, index) => (
+              <motion.div
+                key={founder.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              >
+                <div className="text-center">
+                  <div className="bg-gradient-to-br from-blue-500 to-purple-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Users className="h-10 w-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{founder.name}</h3>
+                  <p className="text-sm text-blue-600 font-semibold mb-3">{founder.designation}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{founder.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Values */}
       <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-6">
