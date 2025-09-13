@@ -160,3 +160,20 @@ For questions or support regarding this AIaaS platform, please contact the devel
 ---
 
 **Built with ❤️ for the future of AI-powered businesses** 
+
+# Ecopyxle Brand (Logo + Wordmark)
+
+The brand combines eco (best value, sustainable) and pyxle (the smallest digital unit, pixel) to reflect an AI‑as‑a‑service platform built on clarity and efficiency.
+
+- Full color: `public/brand/ecopyxle-logo-color.svg`
+- Monochrome: `public/brand/ecopyxle-logo-mono.svg`
+- Showcase: visit `/brand`
+
+Design choices:
+- Colors: emerald + sky (eco) with royal ink (tech) for trust and innovation
+- Forms: bold, modern sans; leaf notch on the “E”, seed in the “o”, pixel‑grid “X”
+- Works at small sizes (avatar) and large (header, print)
+
+Usage:
+- Use color on light backgrounds; use mono for single‑ink or embossing
+- Maintain padding equal to the height of the lowercase “e” around the mark 

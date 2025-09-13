@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160" height="128" viewBox="0 0 160 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ecopyxle symbol">
+  <defs>
+    <linearGradient id="sunset-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="50%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </linearGradient>
+    <radialGradient id="ocean-gradient" cx="0.3" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="40%" stop-color="#0891b2"/>
+      <stop offset="80%" stop-color="#164e63"/>
+      <stop offset="100%" stop-color="#0c4a6e"/>
+    </radialGradient>
+    <linearGradient id="metallic-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+    <pattern id="dots" patternUnits="userSpaceOnUse" width="8" height="8">
+      <circle cx="4" cy="4" r="1.5" fill="rgba(255,255,255,0.3)"/>
+    </pattern>
+    <pattern id="lines" patternUnits="userSpaceOnUse" width="6" height="6">
+      <path d="M0,3 L6,3" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+  </defs>
+  <!-- Bold artistic E and P with vibrant colors and patterns -->
+  
+  <!-- E shape (ECO) - Sunset gradient with dot pattern -->
+  <path d="M20,20 L20,110 L90,110 L90,95 L35,95 L35,72 L80,72 L80,58 L35,58 L35,35 L90,35 L90,20 Z" fill="url(#sunset-gradient)" filter="url(#shadow)"/>
+  <path d="M20,20 L20,110 L90,110 L90,95 L35,95 L35,72 L80,72 L80,58 L35,58 L35,35 L90,35 L90,20 Z" fill="url(#dots)"/>
+  
+  <!-- Decorative flame elements around E -->
+  <path d="M10,15 C15,10 20,12 22,17 C20,22 15,25 10,20 C8,18 8,17 10,15 Z" fill="#fbbf24"/>
+  <path d="M15,110 C20,105 25,107 27,112 C25,117 20,120 15,115 C13,113 13,112 15,110 Z" fill="#f97316"/>
+  <circle cx="92" cy="25" r="3" fill="#dc2626"/>
+  
+  <!-- P shape (PYXLE) - Ocean gradient with line pattern -->
+  <path d="M75,20 L75,110 L90,110 L90,75 L120,75 C132,75 140,67 140,55 L140,40 C140,28 132,20 120,20 Z M90,35 L120,35 C125,35 130,40 130,45 L130,50 C130,55 125,60 120,60 L90,60 Z" fill="url(#ocean-gradient)" filter="url(#shadow)"/>
+  <path d="M75,20 L75,110 L90,110 L90,75 L120,75 C132,75 140,67 140,55 L140,40 C140,28 132,20 120,20 Z M90,35 L120,35 C125,35 130,40 130,45 L130,50 C130,55 125,60 120,60 L90,60 Z" fill="url(#lines)"/>
+  
+  <!-- Digital crystal elements around P -->
+  <g>
+    <!-- Diamond shapes -->
+    <path d="M145,25 L150,20 L155,25 L150,30 Z" fill="#06b6d4"/>
+    <path d="M145,45 L150,40 L155,45 L150,50 Z" fill="#0891b2"/>
+    <path d="M145,65 L150,60 L155,65 L150,70 Z" fill="#164e63"/>
+    
+    <!-- Hexagonal pixels -->
+    <polygon points="135,85 140,80 145,85 140,90" fill="#f59e0b"/>
+    <polygon points="125,95 130,90 135,95 130,100" fill="#dc2626"/>
+    <polygon points="115,105 120,100 125,105 120,110" fill="#7c3aed"/>
+  </g>
+  
+  <!-- Central connecting element with 5D text -->
+  <circle cx="95" cy="65" r="12" fill="url(#metallic-gold)" filter="url(#shadow)"/>
+  <circle cx="95" cy="65" r="9" fill="rgba(255,255,255,0.9)"/>
+  <text x="95" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="url(#metallic-gold)">5D</text>
+</svg>
