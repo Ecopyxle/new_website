@@ -1,0 +1,139 @@
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+
+// Security headers
+const securityHeaders = {
+  'X-DNS-Prefetch-Control': 'on',
+  'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload',
+  'X-XSS-Protection': '1; mode=block',
+  'X-Frame-Options': 'SAMEORIGIN',
+  'X-Content-Type-Options': 'nosniff',
+  'Referrer-Policy': 'origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()'
+}
+
+// Rate limiting store (in production, use Redis or similar)
+const rateLimitStore = new Map<string, { count: number; resetTime: number }>()
+
+function rateLimit(request: NextRequest): boolean {
+  const ip = request.ip || request.headers.get('x-forwarded-for') || 'unknown'
+  const now = Date.now()
+  const windowMs = 60 * 1000 // 1 minute
+  const maxRequests = 100 // requests per window
+
+  const userLimit = rateLimitStore.get(ip)
+  
+  if (!userLimit || now > userLimit.resetTime) {
+    rateLimitStore.set(ip, { count: 1, resetTime: now + windowMs })
+    return true
+  }
+  
+  if (userLimit.count >= maxRequests) {
+    return false
+  }
+  
+  userLimit.count++
+  return true
+}
+
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl
+
+  // Apply rate limiting to API routes
+  if (pathname.startsWith('/api/')) {
+    if (!rateLimit(request)) {
+      return new NextResponse(
+        JSON.stringify({ error: 'Too many requests' }),
+        {
+          status: 429,
+          headers: {
+            'Content-Type': 'application/json',
+            'Retry-After': '60'
+          }
+        }
+      )
+    }
+  }
+
+  // Handle specific API routes
+  if (pathname === '/api/chat' && request.method !== 'POST') {
+    return new NextResponse(
+      JSON.stringify({ error: 'Method not allowed' }),
+      {
+        status: 405,
+        headers: {
+          'Content-Type': 'application/json',
+          'Allow': 'POST'
+        }
+      }
+    )
+  }
+
+  // Block suspicious requests
+  const userAgent = request.headers.get('user-agent') || ''
+  const suspiciousPatterns = [
+    /bot/i,
+    /crawler/i,
+    /spider/i,
+    /scraper/i
+  ]
+  
+  // Allow legitimate bots but block suspicious ones
+  const legitimateBots = [
+    /googlebot/i,
+    /bingbot/i,
+    /slurp/i,
+    /duckduckbot/i,
+    /facebookexternalhit/i,
+    /twitterbot/i,
+    /linkedinbot/i
+  ]
+
+  const isSuspicious = suspiciousPatterns.some(pattern => pattern.test(userAgent)) &&
+                     !legitimateBots.some(pattern => pattern.test(userAgent))
+
+  if (isSuspicious && !pathname.startsWith('/api/health')) {
+    return new NextResponse('Forbidden', { status: 403 })
+  }
+
+  // Create response
+  const response = NextResponse.next()
+
+  // Add security headers
+  Object.entries(securityHeaders).forEach(([key, value]) => {
+    response.headers.set(key, value)
+  })
+
+  // Add CORS headers for API routes
+  if (pathname.startsWith('/api/')) {
+    response.headers.set('Access-Control-Allow-Origin', '*')
+    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+  }
+
+  // Add cache headers for static assets
+  if (pathname.startsWith('/_next/static/') || pathname.includes('.')) {
+    response.headers.set('Cache-Control', 'public, max-age=31536000, immutable')
+  }
+
+  // Add no-cache headers for API routes
+  if (pathname.startsWith('/api/')) {
+    response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+    response.headers.set('Pragma', 'no-cache')
+    response.headers.set('Expires', '0')
+  }
+
+  return response
+}
+
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    '/((?!_next/static|_next/image|favicon.ico).*)',
+  ],
+}

@@ -1,12 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { 
-  Lightbulb, 
-  Search, 
-  FileText, 
-  Palette, 
+import { useState, memo, useCallback } from 'react'
+import {
+  Lightbulb,
+  Search,
+  FileText,
+  Palette,
   Rocket,
   CheckCircle,
   ArrowRight,
@@ -17,8 +17,10 @@ import {
   Send,
   X
 } from 'lucide-react'
+import { DESIGN_SYSTEM } from '../constants/design-system'
+import WebsiteDoodles from './WebsiteDoodles'
 
-export default function Apple5D() {
+const Apple5D = memo(function Apple5D() {
   const [showContactForm, setShowContactForm] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -32,11 +34,11 @@ export default function Apple5D() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  }, [])
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     // Simulate API call
@@ -56,60 +58,61 @@ export default function Apple5D() {
         message: ''
       })
     }, 3000)
-  }
+  }, [])
   const steps = [
     {
       icon: Lightbulb,
       title: 'Dream',
-      description: 'The visionary role of our clients',
-      detail: 'You envision the future you want to create for your business',
+      description: 'You envision the future you want',
+      detail: 'Share your vision of how AI will transform your business and boost your success.',
       color: 'from-yellow-400 to-orange-500'
     },
     {
       icon: Search,
       title: 'Discover',
-      description: 'We immerse ourselves in understanding your vision',
-      detail: 'We thoroughly analyze your challenges and uncover the best AI-driven solutions tailored specifically for your business needs',
+      description: 'We uncover your biggest opportunities',
+      detail: 'We analyze your challenges and identify where AI will deliver the highest impact.',
       color: 'from-blue-400 to-cyan-500'
     },
     {
       icon: FileText,
       title: 'Describe',
-      description: 'We clearly articulate the proposed solution',
-      detail: 'We provide comprehensive documentation and ensure full transparency and alignment with your goals before development begins',
+      description: 'We create your success roadmap',
+      detail: 'We map out exactly how AI will solve your problems and accelerate your growth.',
       color: 'from-green-400 to-emerald-500'
     },
     {
       icon: Palette,
       title: 'Design',
-      description: 'Our expert team develops and implements the solution',
-      detail: 'We meticulously transform your concept into a live, reliable, and scalable application optimized for your environment',
+      description: 'We build your competitive advantage',
+      detail: 'We develop AI solutions that give you an edge over your competition.',
       color: 'from-purple-400 to-pink-500'
     },
     {
       icon: Rocket,
       title: 'Deliver',
-      description: 'We ensure seamless deployment and ongoing support',
-      detail: 'We deploy your AI solution on time and within budget, complete with ongoing maintenance and support for sustained performance',
+      description: 'We launch your AI-powered success',
+      detail: 'We deploy your solution and ensure it delivers results from day one.',
       color: 'from-red-400 to-rose-500'
     }
   ]
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <WebsiteDoodles density="light">
+      <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               Our Unique <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">5D Approach</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto mb-6 sm:mb-8 px-4 sm:px-0 leading-relaxed">
               Ecopyxle is built on one clear, powerful promise: <strong>"You dream it, we AI it."</strong> 
               We believe every pixel in the digital world holds infinite potential, and we take this philosophy 
               further with our unique 5D methodology.
@@ -118,7 +121,7 @@ export default function Apple5D() {
         </div>
 
         {/* 5D Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
           {steps.map((step, index) => (
             <motion.div
               key={step.title}
@@ -128,26 +131,20 @@ export default function Apple5D() {
               viewport={{ once: true }}
               className="group"
             >
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200/50 h-full">
-                {/* Step Number */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <step.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-gray-300 group-hover:text-gray-400 transition-colors duration-300">
-                    {index + 1}
+              <div className={`bg-white/80 backdrop-blur-sm ${DESIGN_SYSTEM.cards.elevated} h-full p-4 sm:p-6`}>
+                {/* Step Icon */}
+                <div className="mb-4 sm:mb-6">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${step.color} ${DESIGN_SYSTEM.borderRadius.lg} flex items-center justify-center group-hover:scale-110 ${DESIGN_SYSTEM.transitions.base}`}>
+                    <step.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors duration-300">
+                <div className="space-y-3 sm:space-y-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors duration-300 leading-tight">
                     {step.title}
                   </h3>
-                  <p className="text-lg font-semibold text-gray-600 group-hover:text-gray-500 transition-colors duration-300">
-                    {step.description}
-                  </p>
-                  <p className="text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors duration-300">
+                  <p className="text-sm sm:text-base text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors duration-300">
                     {step.detail}
                   </p>
                 </div>
@@ -160,10 +157,10 @@ export default function Apple5D() {
                       whileInView={{ width: '100%' }}
                       transition={{ duration: 1, delay: index * 0.2 }}
                       viewport={{ once: true }}
-                      className={`h-full bg-gradient-to-r ${step.color} rounded-full`}
+                      className={`h-full bg-gradient-to-r ${step.color} ${DESIGN_SYSTEM.borderRadius.full}`}
                     />
                   </div>
-                  <CheckCircle className="w-5 h-5 text-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <CheckCircle className={`w-5 h-5 ${DESIGN_SYSTEM.colors.success.main} opacity-0 group-hover:opacity-100 ${DESIGN_SYSTEM.transitions.base}`} />
                 </div>
               </div>
             </motion.div>
@@ -178,18 +175,18 @@ export default function Apple5D() {
           viewport={{ once: true }}
           className="mt-16"
         >
-          <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className={`bg-white/60 backdrop-blur-sm ${DESIGN_SYSTEM.cards.elevated} text-center`}>
+            <h3 className={`${DESIGN_SYSTEM.typography.h3} text-gray-900 mb-4`}>
               Ready to Transform Your Business with AI?
             </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className={`${DESIGN_SYSTEM.typography.body.lg} text-gray-600 mb-8 max-w-2xl mx-auto`}>
               Experience the power of our 5D approach. From your initial dream to final delivery, 
               we're with you every step of the way.
             </p>
             <div className="flex justify-center">
               <button 
                 onClick={() => setShowContactForm(true)}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 inline-flex items-center gap-2 shadow-lg hover:shadow-xl"
+                className={`${DESIGN_SYSTEM.buttons.primary} ${DESIGN_SYSTEM.typography.button.lg} inline-flex items-center gap-2 ${DESIGN_SYSTEM.shadows.lg} hover:${DESIGN_SYSTEM.shadows.xl}`}
               >
                 Start Your AI Journey
                 <ArrowRight className="w-5 h-5" />
@@ -391,6 +388,9 @@ export default function Apple5D() {
           </motion.div>
         )}
       </div>
-    </section>
+      </section>
+    </WebsiteDoodles>
   )
-}
+})
+
+export default Apple5D

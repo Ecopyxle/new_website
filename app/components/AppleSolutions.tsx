@@ -184,10 +184,6 @@ export default function AppleSolutions() {
                 Schedule Consultation
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="border border-gray-600 text-gray-300 px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 flex items-center gap-2">
-                View Case Studies
-                <Globe className="w-5 h-5" />
-              </button>
             </div>
           </div>
         </motion.div>

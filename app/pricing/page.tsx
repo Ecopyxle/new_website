@@ -1,7 +1,9 @@
-"use client"
+'use client'
 
 import { motion } from 'framer-motion'
-import { CheckCircle } from 'lucide-react'
+import { CheckCircle, ArrowRight } from 'lucide-react'
+import WebsiteDoodles from '../components/WebsiteDoodles'
+import { DESIGN_SYSTEM } from '../constants/design-system'
 
 const plans = [
   { name: 'Starter', price: '₹8,499', period: '/month', original: '₹12,999', savings: '35% OFF', features: ['10,000 AI API calls', 'Basic NLP & CV', 'Email support (24/7)'] },
@@ -11,11 +13,36 @@ const plans = [
 
 export default function PricingPage() {
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="text-center mb-12">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Simple, Transparent Pricing</h1>
-        <p className="text-lg text-gray-600">Choose the plan that fits your needs.</p>
-      </div>
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <WebsiteDoodles density="medium">
+        <section className="pt-8 pb-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 border border-green-200 shadow-md mb-6">
+                <span className="text-lg mr-2">💰</span>
+                <span className="text-sm md:text-base font-bold text-gray-800">Transparent Pricing</span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                Simple, <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Transparent</span> Pricing
+              </h1>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8 px-4 sm:px-0 leading-relaxed">
+                Choose the plan that fits your needs. Start small and scale as you grow, with no hidden fees or surprises.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+        </section>
+      </WebsiteDoodles>
+
+      {/* Pricing Cards */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {plans.map((plan, idx) => (
           <motion.div
@@ -53,8 +80,10 @@ export default function PricingPage() {
             <button className={`w-full py-3 px-6 rounded-lg font-medium transition-colors ${plan.popular ? 'bg-primary-600 hover:bg-primary-700 text-white' : 'bg-gray-900 hover:bg-gray-800 text-white'}`}>Get Started</button>
           </motion.div>
         ))}
-      </div>
-    </main>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
 

@@ -1,12 +1,11 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { FileText, Eye, Brain, Play } from 'lucide-react'
+import { FileText, Eye, Play } from 'lucide-react'
 
 const demos = [
   { title: 'AI Paper Correction', desc: 'Try our academic writing assistance and grammar checking', icon: FileText },
   { title: 'Classroom Monitoring', desc: 'Experience student engagement tracking', icon: Eye },
-  { title: 'NUTRI AI Demo', desc: 'Test nutrition analysis and food recognition', icon: Brain },
 ]
 
 export default function DemoPage() {

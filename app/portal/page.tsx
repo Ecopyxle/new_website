@@ -679,11 +679,7 @@ export default function CustomerPortalPage() {
 
                   <div className="bg-white rounded-2xl shadow-lg p-6">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <a href="/resources" className="p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors duration-200">
-                        <h4 className="font-medium text-gray-900 mb-2">Knowledge Base</h4>
-                        <p className="text-sm text-gray-600">Browse our comprehensive help articles</p>
-                      </a>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <a href="/community" className="p-4 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors duration-200">
                         <h4 className="font-medium text-gray-900 mb-2">Community Forum</h4>
                         <p className="text-sm text-gray-600">Connect with other developers</p>

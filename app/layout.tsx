@@ -2,6 +2,10 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import AppleNav from './components/AppleNav'
+import ServiceWorkerRegistration from './components/ServiceWorkerRegistration'
+import WebsiteDoodles from './components/WebsiteDoodles'
+import { ErrorBoundary } from './components/ErrorBoundary'
+import MonitoringProvider from './components/MonitoringProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,6 +21,7 @@ export const metadata: Metadata = {
   keywords: 'Ecopyxle, AI as a Service, Machine Learning, Computer Vision, Natural Language Processing, Predictive Analytics, AI Solutions, Artificial Intelligence, Business Intelligence, You Dream It We AI It',
   authors: [{ name: 'Ecopyxle Team' }],
   robots: 'index, follow',
+  manifest: `/manifest.json?v=${Date.now()}`,
   openGraph: {
     title: 'Ecopyxle - You Dream It, We AI It',
     description: 'Transform your business with Ecopyxle\'s comprehensive AI platform. From machine learning to computer vision, natural language processing to predictive analytics.',
@@ -44,11 +49,32 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="theme-color" content="#2563eb" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Ecopyxle" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+      </head>
       <body className={inter.className}>
-        <AppleNav />
-        <main className="pt-16">
-          {children}
-        </main>
+        <MonitoringProvider>
+          <ErrorBoundary>
+            {/* ServiceWorker temporarily disabled to prevent caching issues */}
+            <WebsiteDoodles density="heavy">
+              <ErrorBoundary>
+                <AppleNav />
+              </ErrorBoundary>
+              <main className="pt-16">
+                <ErrorBoundary>
+                  {children}
+                </ErrorBoundary>
+              </main>
+            </WebsiteDoodles>
+          </ErrorBoundary>
+        </MonitoringProvider>
       </body>
     </html>
   )
