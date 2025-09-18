@@ -1,7 +1,8 @@
 'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight, Play } from 'lucide-react'
+import { ArrowRight, Play, X } from 'lucide-react'
+import { useState } from 'react'
 import { DESIGN_SYSTEM } from '../constants/design-system'
 import TextDoodles from './TextDoodles'
 
@@ -9,6 +10,7 @@ export default function AppleHero() {
   const { scrollY } = useScroll()
   const y = useTransform(scrollY, [0, 500], [0, -100])
   const opacity = useTransform(scrollY, [0, 300], [1, 0])
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -50,7 +52,10 @@ export default function AppleHero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex justify-center items-center mb-12 sm:mb-16"
         >
-          <button className="border border-gray-300 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 text-base sm:text-lg font-semibold flex items-center gap-2 hover:scale-105 w-full sm:w-auto max-w-xs sm:max-w-none">
+          <button 
+            onClick={() => setIsVideoModalOpen(true)}
+            className="border border-gray-300 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 text-base sm:text-lg font-semibold flex items-center gap-2 hover:scale-105 w-full sm:w-auto max-w-xs sm:max-w-none"
+          >
             <Play className="w-4 h-4 sm:w-5 sm:h-5" />
             See AI in Action
           </button>
@@ -128,6 +133,45 @@ export default function AppleHero() {
         </motion.div>
         </TextDoodles>
       </div>
+
+      {/* Video Modal */}
+      {isVideoModalOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setIsVideoModalOpen(false)}
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            className="relative bg-black rounded-2xl overflow-hidden shadow-2xl max-w-4xl w-full max-h-[80vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsVideoModalOpen(false)}
+              className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors duration-200"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            
+            {/* Video Player */}
+            <video
+              controls
+              autoPlay
+              className="w-full h-full"
+              poster="/videos/video-thumbnail.jpg" // Optional: add a thumbnail image
+            >
+              <source src="/videos/Adobe Express - veo3_video_1758238074573.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </motion.div>
+        </motion.div>
+      )}
 
     </section>
   )
