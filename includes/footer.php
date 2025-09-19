@@ -115,7 +115,7 @@
             });
         });
 
-        // Fade in animations on scroll
+        // Scroll reveal animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -124,15 +124,31 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
+                    entry.target.classList.add('revealed');
                 }
             });
         }, observerOptions);
 
-        // Observe all elements with fade-in class
+        // Observe all elements with scroll-reveal class
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.fade-in').forEach(el => {
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
                 observer.observe(el);
+            });
+            
+            // Add staggered animation delays
+            document.querySelectorAll('.scroll-reveal').forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // Parallax effect for background elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.animate-float');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                element.style.transform = `translateY(${scrolled * speed}px)`;
             });
         });
     </script>

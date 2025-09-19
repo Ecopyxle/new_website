@@ -79,12 +79,184 @@
         .btn-primary {
             @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl;
         }
+        
+        /* Advanced Animations */
         .animate-fade-in {
             animation: fadeIn 0.8s ease-out forwards;
         }
+        .animate-slide-up {
+            animation: slideUp 1s ease-out forwards;
+        }
+        .animate-scale-in {
+            animation: scaleIn 0.6s ease-out forwards;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .animate-pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        
+        /* Background Effects */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .gradient-mesh {
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+        }
+        
+        /* Floating Animations */
+        .float-slow {
+            animation: floatSlow 8s ease-in-out infinite;
+        }
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .flow {
+            animation: flow 4s ease-in-out infinite;
+        }
+        .rotate-slow {
+            animation: rotateSlow 10s linear infinite;
+        }
+        .scale-pulse {
+            animation: scalePulse 3s ease-in-out infinite;
+        }
+        .drift {
+            animation: drift 6s ease-in-out infinite;
+        }
+        .bounce-slow {
+            animation: bounceSlow 4s ease-in-out infinite;
+        }
+        .glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        /* Keyframes */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+        
+        @keyframes flow {
+            0% { transform: translateX(-10px); opacity: 0.6; }
+            50% { transform: translateX(10px); opacity: 1; }
+            100% { transform: translateX(-10px); opacity: 0.6; }
+        }
+        
+        @keyframes rotateSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes scalePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes drift {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(10px, -5px) rotate(1deg); }
+            50% { transform: translate(-5px, 10px) rotate(-1deg); }
+            75% { transform: translate(5px, 5px) rotate(0.5deg); }
+        }
+        
+        @keyframes bounceSlow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes glow {
+            0%, 100% { filter: brightness(1) drop-shadow(0 0 5px currentColor); }
+            50% { filter: brightness(1.2) drop-shadow(0 0 15px currentColor); }
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+                transform: scale(1.02);
+            }
+        }
+        
+        /* Hover Effects */
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+        }
+        
+        /* Text Effects */
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .text-shimmer {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        /* Scroll Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -135,7 +307,7 @@
 
     <!-- AI Doodles Background -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-20">
-        <?php include 'ai-doodles.php'; ?>
+        <?php include 'includes/advanced-animations.php'; ?>
     </div>
 
     <main class="pt-16 relative z-10">
