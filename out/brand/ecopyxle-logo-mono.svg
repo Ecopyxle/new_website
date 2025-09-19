@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="320" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ecopyxle (mono)">
+  <defs>
+    <linearGradient id="mono" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+  <text x="290" y="220" text-anchor="middle" font-family="Inter, ui-sans-serif" font-weight="900" font-size="190" letter-spacing="-10" fill="url(#mono)">eco</text>
+  <path d="M170 140 q34 -30 74 0 q-30 34 -74 34 q18 -16 0 -34 Z" fill="#1f2937"/>
+  <circle cx="330" cy="170" r="12" fill="#1f2937"/>
+  <path d="M90 252 C 180 220, 260 246, 340 236" stroke="#1f2937" stroke-width="12" opacity="0.35" fill="none"/>
+  <text x="640" y="220" text-anchor="middle" font-family="Inter, ui-sans-serif" font-weight="900" font-size="190" letter-spacing="-10" fill="url(#mono)">py</text>
+  <g transform="translate(720,168)">
+    <rect x="-28" y="-28" width="34" height="34" rx="5" fill="#111827"/>
+    <rect x="6" y="-28" width="34" height="34" rx="5" fill="#111827"/>
+    <rect x="-28" y="6" width="34" height="34" rx="5" fill="#111827"/>
+    <rect x="6" y="6" width="34" height="34" rx="5" fill="#111827"/>
+  </g>
+  <text x="975" y="220" text-anchor="middle" font-family="Inter, ui-sans-serif" font-weight="900" font-size="190" letter-spacing="-10" fill="url(#mono)">le</text>
+</svg>

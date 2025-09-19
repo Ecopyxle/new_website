@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="220" viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ECOPYXLE">
+  <defs>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="emerald" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+  <!-- Minimal, royal wordmark with emerald ECO and ink PYXLE; diamond pixel before X -->
+  <g transform="translate(40,160)">
+    <text x="0" y="0" font-family="Inter, ui-sans-serif" font-weight="900" font-size="140" letter-spacing="-6" fill="url(#emerald)">ECO</text>
+    <text x="340" y="0" font-family="Inter, ui-sans-serif" font-weight="900" font-size="140" letter-spacing="-6" fill="url(#ink)">PY</text>
+    <!-- Diamond pixel accent -->
+    <rect x="560" y="-68" width="22" height="22" transform="rotate(45 571 -57)" fill="url(#accent)" rx="2"/>
+    <text x="600" y="0" font-family="Inter, ui-sans-serif" font-weight="900" font-size="140" letter-spacing="-6" fill="url(#ink)">XLE</text>
+  </g>
+</svg>
