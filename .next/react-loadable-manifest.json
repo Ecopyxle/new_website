@@ -1,26 +1,20 @@
 {
   "app/page.tsx -> ./components/Apple5D": {
-    "id": 322,
+    "id": "app/page.tsx -> ./components/Apple5D",
     "files": [
-      "static/chunks/vendors-9627acab12f34aee.js",
-      "static/chunks/common-35b9929bfd5c1d6d.js",
-      "static/chunks/322.bfd22d4f2879730c.js"
+      "static/chunks/_app-pages-browser_app_components_Apple5D_tsx.js"
     ]
   },
   "app/page.tsx -> ./components/AppleFooter": {
-    "id": 3517,
+    "id": "app/page.tsx -> ./components/AppleFooter",
     "files": [
-      "static/chunks/vendors-9627acab12f34aee.js",
-      "static/chunks/common-35b9929bfd5c1d6d.js",
-      "static/chunks/517.d011b0408468756d.js"
+      "static/chunks/_app-pages-browser_app_components_AppleFooter_tsx.js"
     ]
   },
   "app/page.tsx -> ./components/AppleProducts": {
-    "id": 5115,
+    "id": "app/page.tsx -> ./components/AppleProducts",
     "files": [
-      "static/chunks/vendors-9627acab12f34aee.js",
-      "static/chunks/common-35b9929bfd5c1d6d.js",
-      "static/chunks/115.72c0907a7cac9a74.js"
+      "static/chunks/_app-pages-browser_app_components_AppleProducts_tsx.js"
     ]
   }
 }
