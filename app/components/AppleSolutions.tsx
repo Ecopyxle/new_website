@@ -157,10 +157,13 @@ export default function AppleSolutions() {
                 </div>
 
                 {/* CTA */}
-                <button className="w-full bg-white text-gray-900 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105 border border-gray-200">
+                <a 
+                  href={solution.title === 'Education' ? '/education' : '#'}
+                  className="w-full bg-white text-gray-900 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105 border border-gray-200"
+                >
                   Explore Solution
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}

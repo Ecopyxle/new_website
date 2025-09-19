@@ -119,10 +119,13 @@ const AppleProducts = memo(function AppleProducts() {
                   </div>
 
                   {/* CTA */}
-                  <button className={`w-full bg-white text-gray-900 py-2 ${DESIGN_SYSTEM.borderRadius.base} font-semibold hover:bg-gray-50 ${DESIGN_SYSTEM.transitions.base} flex items-center justify-center gap-2 group-hover:scale-105 border border-gray-200 ${DESIGN_SYSTEM.typography.body.sm}`}>
+                  <a 
+                    href={product.title.includes('EGS AI') ? '/education' : '#'}
+                    className={`w-full bg-white text-gray-900 py-2 ${DESIGN_SYSTEM.borderRadius.base} font-semibold hover:bg-gray-50 ${DESIGN_SYSTEM.transitions.base} flex items-center justify-center gap-2 group-hover:scale-105 border border-gray-200 ${DESIGN_SYSTEM.typography.body.sm}`}
+                  >
                     Explore Solution
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
+                  </a>
                 </div>
               </motion.div>
             )
