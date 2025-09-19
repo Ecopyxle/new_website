@@ -42,7 +42,7 @@ export default function AppleHero() {
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed font-light px-4 sm:px-0">
             From machine learning APIs to custom AI models, we deliver scalable, secure AI capabilities that integrate 
-            seamlessly into your existing systems—no AI expertise required.
+            seamlessly into your existing systems.
           </p>
         </motion.div>
 
