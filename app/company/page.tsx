@@ -92,16 +92,13 @@ export default function CompanyPage() {
               <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
               <div className="space-y-4">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  <strong>Eliminate AI complexity.</strong> We transform months of expensive development into weeks of rapid deployment, 
-                  delivering powerful AI solutions that boost profits from day one.
+                  <strong>Make AI simple.</strong> Turn complex AI into easy-to-use tools that work for everyone.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  <strong>Democratize AI access.</strong> Every business deserves AI that works—regardless of size, budget, or technical expertise. 
-                  We make enterprise-grade AI accessible to startups and Fortune 500 companies alike.
+                  <strong>Save time and money.</strong> Deploy AI solutions in days, not months, at a fraction of the cost.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  <strong>Drive measurable impact.</strong> We don't just build technology; we deliver solutions that cut costs, 
-                  increase revenue, and create sustainable competitive advantages.
+                  <strong>Deliver real results.</strong> Focus on solutions that actually improve your business performance.
                 </p>
               </div>
             </motion.div>
@@ -119,16 +116,13 @@ export default function CompanyPage() {
               <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h3>
               <div className="space-y-4">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  <strong>AI-first world.</strong> We envision a future where every business leverages AI to unlock its full potential, 
-                  creating a more efficient and innovative global economy.
+                  <strong>AI for everyone.</strong> Every business should have access to powerful AI tools, regardless of size or budget.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  <strong>Seamless integration.</strong> AI should work invisibly in the background, enhancing human capabilities 
-                  without replacing human judgment and creativity.
+                  <strong>Work together.</strong> AI should help people do their jobs better, not replace them.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  <strong>Ethical leadership.</strong> We're committed to responsible AI development that prioritizes transparency, 
-                  fairness, and positive societal impact in everything we build.
+                  <strong>Build responsibly.</strong> Create AI that's fair, transparent, and makes the world better.
                 </p>
               </div>
             </motion.div>

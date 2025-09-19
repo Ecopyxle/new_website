@@ -34,10 +34,13 @@ include 'includes/header.php';
             <div>
                 <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
                 <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                    To democratize artificial intelligence by making it accessible, affordable, and easy to implement for businesses of all sizes. We believe that every organization should have the power to harness AI's potential without the need for extensive technical expertise or massive budgets.
+                    <strong>Make AI simple.</strong> Turn complex AI into easy-to-use tools that work for everyone.
+                </p>
+                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                    <strong>Save time and money.</strong> Deploy AI solutions in days, not months, at a fraction of the cost.
                 </p>
                 <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    Our platform bridges the gap between complex AI technologies and practical business applications, enabling companies to transform their operations and drive unprecedented growth.
+                    <strong>Deliver real results.</strong> Focus on solutions that actually improve your business performance.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <div class="bg-blue-50 px-4 py-2 rounded-lg">
@@ -51,15 +54,23 @@ include 'includes/header.php';
                     </div>
                 </div>
             </div>
-            <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8">
+            <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8">
                 <div class="text-center">
-                    <div class="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-white text-3xl font-bold">AI</span>
+                    <div class="w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-3xl font-bold">💡</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Innovation at Scale</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        We combine cutting-edge AI research with practical business applications to deliver solutions that work in the real world.
-                    </p>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+                    <div class="space-y-4 text-left">
+                        <p class="text-gray-600 leading-relaxed">
+                            <strong>AI for everyone.</strong> Every business should have access to powerful AI tools, regardless of size or budget.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            <strong>Work together.</strong> AI should help people do their jobs better, not replace them.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            <strong>Build responsibly.</strong> Create AI that's fair, transparent, and makes the world better.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
