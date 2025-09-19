@@ -1,0 +1,126 @@
+{
+  "name": "ecopyxle-website",
+  "version": "1.0.0",
+  "description": "Ecopyxle AI as a Service Platform deployment configuration for Hostinger",
+  "deployment": {
+    "type": "static",
+    "framework": "nextjs",
+    "node_version": "18.x",
+    "php_version": "8.0",
+    "build": {
+      "command": "npm run build:hostinger",
+      "output_directory": "out",
+      "install_command": "npm ci",
+      "environment": {
+        "NODE_ENV": "production",
+        "NEXT_TELEMETRY_DISABLED": "1"
+      }
+    },
+    "publish": {
+      "directory": "out",
+      "ignore": [
+        "node_modules",
+        ".next",
+        ".git",
+        "src",
+        ".env*",
+        "*.log"
+      ]
+    },
+    "headers": [
+      {
+        "source": "**/*.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=3600"
+          }
+        ]
+      },
+      {
+        "source": "**/*.{js,css}",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.{png,jpg,jpeg,gif,webp,svg,ico}",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/home",
+        "destination": "/",
+        "permanent": true
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/api/:path*",
+        "destination": "/api/:path*"
+      }
+    ]
+  },
+  "hostinger": {
+    "git_deployment": {
+      "enabled": true,
+      "branch": "main",
+      "build_command": "npm run build:hostinger",
+      "publish_directory": "out",
+      "environment_variables": {
+        "NODE_ENV": "production",
+        "NEXT_TELEMETRY_DISABLED": "1"
+      }
+    },
+    "domain": {
+      "custom_domain": "ecopyxle.com",
+      "www_redirect": true,
+      "https_redirect": true
+    },
+    "performance": {
+      "gzip_compression": true,
+      "browser_caching": true,
+      "minify_html": true,
+      "minify_css": true,
+      "minify_js": true
+    },
+    "security": {
+      "ssl_certificate": "auto",
+      "security_headers": true,
+      "hotlink_protection": false
+    }
+  },
+  "scripts": {
+    "pre-build": [
+      "echo 'Starting Hostinger deployment build...'",
+      "cp next.config.hostinger.js next.config.js"
+    ],
+    "post-build": [
+      "echo 'Build completed successfully'",
+      "ls -la out/"
+    ],
+    "health-check": [
+      "curl -f http://localhost:3000/ || exit 1"
+    ]
+  },
+  "monitoring": {
+    "uptime_check": {
+      "enabled": true,
+      "url": "https://ecopyxle.com",
+      "interval": "5m"
+    },
+    "error_tracking": {
+      "enabled": true,
+      "log_level": "error"
+    }
+  }
+}

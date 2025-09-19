@@ -1,34 +1,82 @@
 {
     "name": "ecopyxle/website",
-    "description": "Ecopyxle AI as a Service Platform - Static Website",
+    "description": "Ecopyxle AI as a Service Platform - Next.js Static Website for Hostinger Cloud Hosting",
     "type": "project",
-    "keywords": ["ai", "artificial-intelligence", "saas", "website", "static"],
+    "keywords": ["ai", "artificial-intelligence", "saas", "website", "static", "nextjs", "hostinger"],
     "homepage": "https://ecopyxle.com",
     "license": "MIT",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Ecopyxle Team",
-            "email": "info@ecopyxle.com"
+            "email": "info@ecopyxle.com",
+            "homepage": "https://ecopyxle.com",
+            "role": "Development Team"
         }
     ],
     "require": {
-        "php": ">=7.4"
+        "php": ">=8.0",
+        "ext-json": "*",
+        "ext-curl": "*"
     },
-    "require-dev": {},
-    "autoload": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ecopyxle\\Website\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
     "scripts": {
         "post-install-cmd": [
-            "echo 'This is a Next.js static website. PHP dependencies are minimal.'"
+            "@php -r \"echo 'Ecopyxle Website - Composer dependencies installed successfully.\\n';\"",
+            "@php -r \"echo 'This is a Next.js static website optimized for Hostinger Cloud Hosting.\\n';\""
         ],
         "post-update-cmd": [
-            "echo 'Static website updated successfully.'"
+            "@php -r \"echo 'Ecopyxle Website - Dependencies updated successfully.\\n';\""
+        ],
+        "build": [
+            "npm install",
+            "npm run build:hostinger"
+        ],
+        "deploy": [
+            "./deploy.hostinger.sh"
+        ],
+        "test": [
+            "echo 'Running website tests...'",
+            "php -l index.php"
         ]
     },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "*": true
+        },
+        "platform": {
+            "php": "8.0"
+        }
+    },
+    "extra": {
+        "hostinger": {
+            "build-command": "npm run build:hostinger",
+            "publish-directory": "out",
+            "node-version": "18"
+        },
+        "deployment": {
+            "type": "static",
+            "framework": "nextjs",
+            "build-output": "out"
+        }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "support": {
+        "email": "support@ecopyxle.com",
+        "docs": "https://github.com/Ecopyxle/new_website/blob/main/README.hostinger.md"
+    }
 }

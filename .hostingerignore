@@ -1,0 +1,130 @@
+# Hostinger Deployment Ignore File
+# Files and directories to exclude from deployment
+
+# Development files
+node_modules/
+.next/
+src/
+.git/
+.github/
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Build files (keep only 'out' directory)
+build/
+dist/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+# next.js build output (we want the 'out' directory only)
+.next
+
+# Nuxt.js build output
+.nuxt
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Temporary folders
+tmp/
+temp/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Package files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Development tools
+.eslintcache
+.stylelintcache
+
+# Testing
+coverage/
+.jest/
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Development scripts
+scripts/dev/
+scripts/test/
+
+# Source maps (optional - remove if you want to keep them)
+*.map
+
+# TypeScript
+*.tsbuildinfo
+
+# Composer vendor (if not needed in production)
+vendor/
+
+# PHP development files
+composer.phar
+phpunit.xml
+.phpunit.result.cache
