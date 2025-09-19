@@ -335,54 +335,6 @@ export default function UseCasesPage() {
         </div>
         </section>
       </WebsiteDoodles>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Your Success Story Starts Here</h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Stop watching competitors get ahead. Join the businesses already saving time, cutting costs, 
-              and delighting customers with AI that delivers results from day one.
-            </p>
-            
-            {/* Success Metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">50+</div>
-                <div className="text-sm text-gray-600">Projects Delivered</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600 mb-1">95%</div>
-                <div className="text-sm text-gray-600">Client Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-600 mb-1">70%</div>
-                <div className="text-sm text-gray-600">Average Efficiency Gain</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-orange-600 mb-1">24/7</div>
-                <div className="text-sm text-gray-600">AI Support</div>
-              </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 inline-flex items-center gap-2">
-                Launch Your AI Project
-                <ArrowRight className="h-4 w-4" />
-              </button>
-              <button className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300">
-                See More Success Stories
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   )
 }
