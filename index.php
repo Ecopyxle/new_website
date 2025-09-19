@@ -54,7 +54,7 @@ include 'includes/header.php';
             <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/50 hover-lift scroll-reveal">
                 <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center text-2xl mb-4 animate-pulse">⚡</div>
                 <h3 class="text-lg font-bold text-gray-900 mb-2">Launch AI Features Today</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">Go from idea to implementation in hours, not months—our APIs work with your existing code</p>
+                <p class="text-gray-600 text-sm leading-relaxed">Go from idea to implementation in days—our APIs work with your existing code</p>
             </div>
             <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/50 hover-lift scroll-reveal" style="animation-delay: 0.2s;">
                 <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-2xl mb-4 animate-pulse" style="animation-delay: 0.5s;">🔒</div>

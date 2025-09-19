@@ -72,7 +72,7 @@ export default function AppleHero() {
             { 
               icon: '⚡', 
               title: 'Launch AI Features Today', 
-              description: 'Go from idea to implementation in hours, not months—our APIs work with your existing code',
+              description: 'Go from idea to implementation in days—our APIs work with your existing code',
               color: 'from-blue-500 to-cyan-500'
             },
             { 
