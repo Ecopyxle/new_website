@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import Image from 'next/image'
 import { 
   GraduationCap, 
   Users, 
@@ -58,7 +59,8 @@ export default function UseCasesPage() {
         basePrice: 3650,
         unit: "student/year",
         description: "₹3,650 per student per year"
-      }
+      },
+      backgroundImage: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
       icon: Users,
@@ -83,7 +85,8 @@ export default function UseCasesPage() {
       pricing: {
         type: "contact",
         description: "Custom pricing based on your requirements"
-      }
+      },
+      backgroundImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
       icon: Database,
@@ -108,7 +111,8 @@ export default function UseCasesPage() {
       pricing: {
         type: "contact",
         description: "Enterprise pricing available on request"
-      }
+      },
+      backgroundImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
       icon: Brain,
@@ -133,7 +137,8 @@ export default function UseCasesPage() {
       pricing: {
         type: "contact",
         description: "Tailored pricing for custom AI development"
-      }
+      },
+      backgroundImage: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
     }
   ]
 
@@ -180,9 +185,15 @@ export default function UseCasesPage() {
                 viewport={{ once: true }}
                 className={`relative bg-gradient-to-br ${caseStudy.bgColor} rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/50 group hover:-translate-y-1 overflow-hidden`}
               >
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-5">
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white to-transparent transform rotate-12 scale-150"></div>
+                {/* Background Image */}
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src={caseStudy.backgroundImage}
+                    alt={`${caseStudy.title} background`}
+                    fill
+                    className="object-cover opacity-10"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${caseStudy.bgColor} opacity-90`}></div>
                 </div>
                 
                 {/* Header with Icon and Stats */}

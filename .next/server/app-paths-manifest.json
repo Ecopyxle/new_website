@@ -1,6 +1,7 @@
 {
-  "/use-cases/page": "app/use-cases/page.js",
   "/company/page": "app/company/page.js",
   "/education/page": "app/education/page.js",
-  "/contact/page": "app/contact/page.js"
+  "/contact/page": "app/contact/page.js",
+  "/page": "app/page.js",
+  "/features/page": "app/features/page.js"
 }

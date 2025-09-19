@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { 
   Shield, 
   Zap, 
@@ -27,7 +28,8 @@ const features = [
     benefit: 'Delight users with sub-50ms AI responses that feel instantaneous',
     desc: 'Your customers never wait. Our infrastructure handles millions of requests while maintaining lightning speed.',
     color: 'from-yellow-500 to-orange-500',
-    bgColor: 'from-yellow-50 to-orange-50'
+    bgColor: 'from-yellow-50 to-orange-50',
+    backgroundImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'
   },
   { 
     icon: Brain, 
@@ -35,7 +37,8 @@ const features = [
     benefit: 'Access cutting-edge neural networks without the PhD in machine learning',
     desc: 'We handle the complexity—you get state-of-the-art transformers and CNNs that actually solve your problems.',
     color: 'from-purple-500 to-pink-500',
-    bgColor: 'from-purple-50 to-pink-50'
+    bgColor: 'from-purple-50 to-pink-50',
+    backgroundImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'
   },
   { 
     icon: MessageSquare, 
@@ -43,7 +46,8 @@ const features = [
     benefit: 'Turn every conversation into actionable insights with advanced NLP',
     desc: 'Analyze sentiment, generate responses, translate languages—make every interaction count.',
     color: 'from-blue-500 to-cyan-500',
-    bgColor: 'from-blue-50 to-cyan-50'
+    bgColor: 'from-blue-50 to-cyan-50',
+    backgroundImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3'
   },
   { 
     icon: Eye, 
@@ -51,7 +55,8 @@ const features = [
     benefit: 'Extract valuable insights from images and videos in real-time',
     desc: 'Detect objects, recognize faces, read text—turn visual data into competitive advantage.',
     color: 'from-green-500 to-emerald-500',
-    bgColor: 'from-green-50 to-emerald-50'
+    bgColor: 'from-green-50 to-emerald-50',
+    backgroundImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'
   },
   { 
     icon: Workflow, 
@@ -59,7 +64,8 @@ const features = [
     benefit: 'Cut manual tasks by 80% with AI that learns your workflows',
     desc: 'Smart automation that gets smarter—your team focuses on strategy while AI handles the routine.',
     color: 'from-indigo-500 to-purple-500',
-    bgColor: 'from-indigo-50 to-purple-50'
+    bgColor: 'from-indigo-50 to-purple-50',
+    backgroundImage: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'
   },
   { 
     icon: BarChart3, 
@@ -67,7 +73,8 @@ const features = [
     benefit: 'Stay ahead of trends with machine learning that sees the future',
     desc: 'Forecast demand, assess risks, spot opportunities—make decisions with confidence.',
     color: 'from-emerald-500 to-teal-500',
-    bgColor: 'from-emerald-50 to-teal-50'
+    bgColor: 'from-emerald-50 to-teal-50',
+    backgroundImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'
   },
   { 
     icon: Database, 
@@ -75,7 +82,8 @@ const features = [
     benefit: 'Transform chaotic data into AI-ready insights without the headache',
     desc: 'Stop wrestling with data prep—our pipelines clean, process, and optimize your data automatically.',
     color: 'from-teal-500 to-cyan-500',
-    bgColor: 'from-teal-50 to-cyan-50'
+    bgColor: 'from-teal-50 to-cyan-50',
+    backgroundImage: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'
   },
   { 
     icon: Shield, 
@@ -83,7 +91,8 @@ const features = [
     benefit: 'Deploy AI with confidence knowing your data is fortress-protected',
     desc: 'SOC2/ISO certified, end-to-end encrypted—security so tight, even we can\'t see your data.',
     color: 'from-red-500 to-pink-500',
-    bgColor: 'from-red-50 to-pink-50'
+    bgColor: 'from-red-50 to-pink-50',
+    backgroundImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'
   },
   { 
     icon: Cloud, 
@@ -91,7 +100,8 @@ const features = [
     benefit: 'Run your AI on any cloud or on-premises without vendor lock-in',
     desc: 'AWS, Azure, GCP, or your own servers—our AI adapts to your infrastructure, not the other way around.',
     color: 'from-violet-500 to-purple-500',
-    bgColor: 'from-violet-50 to-purple-50'
+    bgColor: 'from-violet-50 to-purple-50',
+    backgroundImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3'
   },
   { 
     icon: Settings, 
@@ -99,7 +109,8 @@ const features = [
     benefit: 'Smart scaling cuts your AI costs by automatically optimizing resources',
     desc: 'No more paying for idle servers—our intelligence scales up for traffic spikes, down for savings.',
     color: 'from-orange-500 to-red-500',
-    bgColor: 'from-orange-50 to-red-50'
+    bgColor: 'from-orange-50 to-red-50',
+    backgroundImage: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'
   },
   { 
     icon: Lock, 
@@ -107,7 +118,8 @@ const features = [
     benefit: 'Maintain complete control with privacy-first AI architecture',
     desc: 'Your data stays where you want it—we process, you own, nobody else sees.',
     color: 'from-gray-600 to-gray-800',
-    bgColor: 'from-gray-50 to-slate-50'
+    bgColor: 'from-gray-50 to-slate-50',
+    backgroundImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'
   },
   { 
     icon: CheckCircle, 
@@ -115,7 +127,8 @@ const features = [
     benefit: 'Ensure consistent results with automated quality monitoring',
     desc: 'Continuous testing catches issues before your users do—reliable AI you can actually depend on.',
     color: 'from-cyan-500 to-blue-500',
-    bgColor: 'from-cyan-50 to-blue-50'
+    bgColor: 'from-cyan-50 to-blue-50',
+    backgroundImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3'
   }
 ]
 
@@ -163,9 +176,15 @@ export default function FeaturesPage() {
                 viewport={{ once: true }}
                 className={`relative bg-gradient-to-br ${feature.bgColor} rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/50 group hover:-translate-y-2 overflow-hidden`}
               >
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-5">
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white to-transparent transform rotate-12 scale-150"></div>
+                {/* Background Image */}
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src={feature.backgroundImage}
+                    alt={`${feature.title} background`}
+                    fill
+                    className="object-cover opacity-10"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.bgColor} opacity-90`}></div>
                 </div>
                 
                 {/* Icon with Animation */}
