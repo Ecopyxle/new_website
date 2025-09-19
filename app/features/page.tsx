@@ -201,28 +201,6 @@ export default function FeaturesPage() {
         </section>
       </WebsiteDoodles>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Ready to Experience These Features?</h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Start building with our AI platform today and see the difference enterprise-grade features make.
-            </p>
-            <div className="flex justify-center">
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 inline-flex items-center gap-2">
-                Start Free Trial
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   )
 }
